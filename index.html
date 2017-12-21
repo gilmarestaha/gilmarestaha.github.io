@@ -1,5 +1,43 @@
-<html>
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gilmar Mendes está há...</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+</head>
 <body>
-<!-- logo -->
+    <style>
+        body{
+            background: #000;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            text-align: center;
+            font-size: 150%;
+            padding-top: 10%;
+        }
+
+        @keyframes blink {
+            50% { border-color: #ff0000; }
+         }
+
+        span{
+            font-size: 180%;
+            background-color: #fff;
+            color: #000;
+            border-style: solid;
+            border-width: 10px;
+            animation: blink .1s step-end infinite alternate;
+            padding: 0 8px;
+        }
+
+
+    </style>
+    <p> Vossa Excelência Gilmar Mendes está há <span id="days"></span> dia(s) sem uma polêmica decisão.</p>
+    <script>
+            var now = moment(new Date()); //todays date
+            var end = moment("2017-12-20 18:00:00"); // another date
+            var duration = moment.duration(now.diff(end));
+            var days = duration.asDays();
+            document.getElementById("days").innerText = Math.floor(days);
+    </script>
 </body>
 </html>
