@@ -14,7 +14,6 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="http://connect.facebook.net/en_US/all.js"></script>
-    <script src="lib/share-bar/js/share.bar.min.js"></script>
     <link rel="stylesheet" href="lib/share-bar/css/share.bar.css">
 </head>
 <body>
@@ -84,31 +83,35 @@
         data-image-url="http://gilmarestaha.info/img/gilmar.jpg" 
         data-hashtags="#gilmarmendes">
     </div>
-    <script>
-            var now = moment(new Date()); //todays date
-            var end = moment("2017-12-22 21:30:00"); // last event
-            var duration = moment.duration(now.diff(end));
-            var days = Math.floor(duration.asDays());
-            var daysSpan = document.getElementById("days");
-            daysSpan.innerText = days;
-            if (!days){
-                daysSpan.setAttribute('class', 'critic');
-            }else{
-                daysSpan.setAttribute('class', 'needs-attention');
-            }
 
-            new ShareBar();
-    </script>
+    <!-- Bottom Scripts -->
+        <script src="lib/share-bar/js/share.bar.min.js"></script>
+        <script>
+                var now = moment(new Date()); //todays date
+                var end = moment("2017-12-22 21:30:00"); // last event
+                var duration = moment.duration(now.diff(end));
+                var days = Math.floor(duration.asDays());
+                var daysSpan = document.getElementById("days");
+                daysSpan.innerText = days;
+                if (!days){
+                    daysSpan.setAttribute('class', 'critic');
+                }else{
+                    daysSpan.setAttribute('class', 'needs-attention');
+                }
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111528625-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+                //new ShareBar();       
+        </script>
 
-    gtag('config', 'UA-111528625-1');
-    </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111528625-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-111528625-1');
+        </script>
+<!-- End bottom Scripts -->
 
 </body>
 </html>
